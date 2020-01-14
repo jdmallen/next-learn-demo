@@ -1,13 +1,15 @@
 import { useRouter } from 'next/router'
-import Layout from '../../components/MyLayout.js'
+import withLayout from '../../components/MyLayout.js'
 
-export default function Post() {
+const Post = () => {
   const router = useRouter()
 
   return (
-    <Layout>
+    <div>
       <h1>{router.query.id}</h1>
       <p>This is the blog post content.</p>
-    </Layout>
+    </div>
   )
 }
+
+export default withLayout(Post);
